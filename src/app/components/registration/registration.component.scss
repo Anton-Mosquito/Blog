@@ -1,0 +1,160 @@
+.wrapper {
+  padding-top: 110px;
+  position: relative;
+  width: 100%;
+  min-height: 100%;
+  display: flex;
+  & .image-box {
+    position: relative;
+    width: 50%;
+    height: 100%;
+    background: url("../../../assets/img/pavlo-Q-Z0YRPOn2Q-unsplash.jpg");
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      background: linear-gradient(225deg, #aa076b, #61045f);
+      mix-blend-mode: screen;
+    }
+  }
+  & .content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 100vh;
+    & .form-box {
+      width: 50%;
+      &__header {
+        color: #607d8b;
+        font-weight: 600;
+        font-size: 1.5rem;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+        border-bottom: 4px solid #aa076b;
+        letter-spacing: 1px;
+        display: inline-block;
+      }
+      &__field {
+        margin-bottom: 20px;
+        & .button {
+          position: relative;
+          display: block;
+          width: 100%;
+          padding: 10px;
+          border: 2px solid #aa076b;
+          font-weight: 600;
+          color: #607d8b;
+          letter-spacing: 2px;
+          transition: 0.5s;
+          cursor: pointer;
+          transition-delay: 0s;
+          background: transparent;
+          border-radius: 30px;
+          font-size: 1.3rem;
+          & span {
+            position: relative;
+            z-index: 100;
+          }
+          &:hover {
+            transition-delay: 1.5s;
+            color: #fff;
+            box-shadow: 0 0 5px #aa076b, 0 0 10px #aa076b, 0 0 15px #aa076b, 0 0 20px #aa076b, 0 0 25px #aa076b;
+          }
+          &::before {
+            content: "";
+            position: absolute;
+            left: -20px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 20px;
+            height: 2px;
+            background: #aa076b;
+            box-shadow: 5px -8px 0 #aa076b, 5px 8px 0 #aa076b;
+            transition: width 0.5s, left 0.5s, height 0.5s, box-shadow 0.5s;
+            transition-delay: 1s, 0.5s, 0s, 0s;
+            border-radius: 30px;
+          }
+          &:hover::before {
+            width: 60%;
+            height: 102%;
+            left: -2px;
+            box-shadow: 5px 0 0 #aa076b, 5px 0 0 #aa076b;
+            transition-delay: 0s, 0.5s, 1s, 1s;
+          }
+          &::after {
+            content: "";
+            position: absolute;
+            right: -20px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 20px;
+            height: 2px;
+            background: #aa076b;
+            box-shadow: -5px -8px 0 #aa076b, -5px 8px 0#aa076b;
+            transition: width 0.5s, left 0.5s, height 0.5s, box-shadow 0.5s;
+            transition-delay: 1s, 0.5s, 0s, 0s;
+            border-radius: 30px;
+          }
+          &:hover::after {
+            width: 60%;
+            height: 102%;
+            right: -2px;
+            box-shadow: -5px 0 0 #aa076b, -5px 0 0 #aa076b;
+            transition-delay: 0s, 0.5s, 1s, 1s;
+          }
+        }
+        & p {
+          color: #607d8b;
+          & a {
+            color: #aa076b;
+            margin-left: 5px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .wrapper {
+    & .image-box {
+      background-position: 20% 50%;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .wrapper {
+    & .content {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      background: url("../../../assets/img/nasa-Q1p7bh3SHj8-unsplash.webp");
+      background-position: center center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      & .form-box {
+        width: 100%;
+        padding: 40px;
+        background: rgba(255, 255, 255, 0.9);
+        margin: 50px;
+        & h3 {
+          margin: 30px 0 10px;
+        }
+      }
+    }
+  }
+}

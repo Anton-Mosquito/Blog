@@ -1,0 +1,67 @@
+<section class="wrapper">
+  <h2 class="title">Search :</h2>
+  <form action="" class="form" #form>
+    <div class="form__input">
+      <app-text
+        [formControl]="filmNameControl"
+        [objectForControlsText]="filmNameControl"
+        [placeHolder]="'Enter the title of the movie'"
+      ></app-text>
+    </div>
+    <div class="form__row">
+      <label for="" class="form__row-title"><strong>Type : </strong></label>
+      <select
+        name=""
+        id=""
+        class="form__row-list"
+        [formControl]="selectControl"
+      >
+        <option value="" disabled>Choose a type</option>
+        <option *ngFor="let option of options" [ngValue]="option">
+          {{ option.name }}
+        </option>
+      </select>
+      <div
+        class="form__row-list-feedback"
+        *ngIf="isSubmitted && selectControl.errors?.required"
+      >
+        <sup>*</sup>Please enter your city name
+      </div>
+    </div>
+    <button type="submit" class="form__button"><span>Search</span></button>
+  </form>
+  <app-film-list
+    [items]="films"
+    *ngIf="isLoadingContent | async"
+  ></app-film-list>
+  <app-loader-for-films *ngIf="isLoading | async"></app-loader-for-films>
+  <ul class="pagination" *ngIf="loadingPagination">
+    <li>
+      <a
+        href=""
+        [class.disabled]="page === 1"
+        #buttons
+        data-page="prev"
+        (click)="$event.preventDefault()"
+        >< Prev</a
+      >
+    </li>
+    <li
+      *ngFor="let button of quantityButton; let i = index"
+      class="pageNumber"
+      [class.active]="quantityButton[i] === page"
+    >
+      <a #buttons data-page="current">{{ quantityButton[i] }}</a>
+    </li>
+    <li>
+      <a
+        href=""
+        [class.disabled]="page === totalPages || maxPages <= 10"
+        #buttons
+        data-page="next"
+        (click)="$event.preventDefault()"
+        >Next ></a
+      >
+    </li>
+  </ul>
+</section>

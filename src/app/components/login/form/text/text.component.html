@@ -1,0 +1,28 @@
+<div class="wrapper">
+  <span class="field__name">{{ placeHolder }}</span>
+  <input
+    type="text"
+    class="field__input"
+    (input)="eventStarted($event)"
+    [class.invalid]="
+      _objectForControlsText.invalid &&
+      (_objectForControlsText.touched || _objectForControlsText.dirty)
+    "
+    [class.valid]="_objectForControlsText.valid"
+    [class.untouched]="_objectForControlsText.pristine"
+    value="{{ value }}"
+  />
+  <div
+    class="field__error"
+    *ngIf="
+      _objectForControlsText.invalid &&
+      (_objectForControlsText.touched || _objectForControlsText.dirty)
+    "
+  >
+    <span
+      class="field__error-message"
+      *ngIf="_objectForControlsText.errors?.required"
+      >This field is required</span
+    >
+  </div>
+</div>

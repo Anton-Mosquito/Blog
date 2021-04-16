@@ -1,0 +1,33 @@
+<div class="wrapper">
+  <span class="field__name">Phone</span>
+  <input
+    type="tel"
+    class="field__input"
+    (input)="eventStarted($event)"
+    [class.invalid]="
+      _objectForControlsPhone.invalid &&
+      (_objectForControlsPhone.touched || _objectForControlsPhone.dirty)
+    "
+    [class.valid]="_objectForControlsPhone.valid"
+    [class.untouched]="_objectForControlsPhone.pristine"
+    value="{{ value }}"
+  />
+  <div
+    class="field__error"
+    *ngIf="
+      _objectForControlsPhone.invalid &&
+      (_objectForControlsPhone.touched || _objectForControlsPhone.dirty)
+    "
+  >
+    <span
+      class="field__error-message"
+      *ngIf="_objectForControlsPhone.errors?.required"
+      >This field is required</span
+    >
+    <span
+      class="field__error-message"
+      *ngIf="_objectForControlsPhone.errors?.pattern"
+      >Format +380931111111</span
+    >
+  </div>
+</div>

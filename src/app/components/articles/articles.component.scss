@@ -1,0 +1,17 @@
+.wrapper {
+  position: relative;
+  width: 100%;
+  min-height: 100%;
+  padding: 100px 40px 40px 40px;
+  background-image: url("../../../assets/img/26136.webp");
+  background-color: rgba(0, 0, 0, 0.9);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  .articles {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}

@@ -1,0 +1,185 @@
+.wrapper {
+  position: relative;
+  width: 100%;
+  min-height: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto auto;
+  grid-gap: 10px;
+  padding: 100px 20px 20px;
+  background: rgb(20, 30, 48);
+  background: linear-gradient(90deg, rgba(20, 30, 48, 1) 0%, rgba(36, 59, 85, 1) 100%);
+  .title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 4rem;
+    letter-spacing: 1px;
+    color: #fff;
+  }
+  .form {
+    background: #fff;
+    width: 50%;
+    margin: 0 auto;
+    border-radius: 25px;
+    padding: 10px;
+    box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &__input {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    &__row {
+      position: relative;
+      width: 90%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 10px;
+      &-title {
+        font-size: 1.2rem;
+        font-weight: 500;
+      }
+      &-list {
+        position: relative;
+        padding: 0 0 0 1rem;
+        height: 30px;
+        width: 250px;
+        background-color: #006363;
+        color: #fff;
+        border: 0;
+        outline: none;
+        font-size: 1.5rem;
+        appearance: none;
+        cursor: pointer;
+        box-shadow: 0 5px 25px rgba(0, 35, 130, 0.3);
+        ::before {
+          content: "";
+          position: absolute;
+          width: 0;
+          height: 0;
+          border-style: solid;
+          border-width: 20px 12.5px 0 12.5px;
+          border-color: #00c9c9 transparent transparent transparent;
+          top: 40%;
+          left: 40%;
+          pointer-events: none;
+        }
+        &-feedback {
+          position: absolute;
+          top: -20px;
+          right: 0;
+          color: #ff0000;
+        }
+      }
+    }
+    &__button {
+      line-height: 40px;
+      display: inline-block;
+      cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      padding: 0 40px;
+      font-size: 18px;
+      border-radius: 25px;
+      background-color: #bfc0c4;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s ease 0s;
+      span {
+        position: relative;
+        z-index: 2;
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        border-radius: 25px;
+        background-color: #141e30;
+        transition: all 0.3s ease 0s;
+        transform: scale(0);
+      }
+      &:hover {
+        color: #fff;
+        &::before {
+          transform: scale(1);
+        }
+      }
+    }
+  }
+  .pagination {
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 10px 20px;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    li {
+      line-height: 50px;
+      margin: 0 5px;
+      &.pageNumber {
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+      }
+      &.pageNumber:hover a,
+      &.pageNumber.active {
+        background: #333;
+        color: #fff;
+      }
+      a {
+        display: block;
+        color: #777;
+        font-weight: 600;
+        border-radius: 50%;
+      }
+      &:first-child {
+        margin-right: 30px;
+        font-weight: 700;
+        font-size: 20px;
+      }
+      &:last-child {
+        margin-left: 30px;
+        font-weight: 700;
+        font-size: 20px;
+      }
+    }
+    .disabled {
+      pointer-events: none;
+    }
+  }
+}
+
+@media (max-width: 830px) {
+  .wrapper {
+    .form {
+      width: 80%;
+      &__row {
+        position: relative;
+        width: 90%;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        margin-bottom: 10px;
+        &-title {
+          font-size: 1rem;
+          font-weight: 500;
+        }
+        &-list {
+          width: 100px;
+          font-size: 1rem;
+          padding: 0;
+        }
+      }
+    }
+  }
+}

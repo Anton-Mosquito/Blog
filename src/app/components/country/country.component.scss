@@ -1,0 +1,83 @@
+.wrapper {
+  padding-top: 110px;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: min-content 50px auto;
+  width: 100%;
+  min-height: 100%;
+  background: rgb(20, 30, 48);
+  background: linear-gradient(90deg, rgba(20, 30, 48, 1) 0%, rgba(36, 59, 85, 1) 100%);
+  .title {
+    position: inherit;
+    align-self: center;
+    color: #d2386c;
+    font-size: 3rem;
+    letter-spacing: 5px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    text-shadow: 0 5px 0 rgba(0, 0, 0, 1), 0 10px 40px rgba(0, 0, 0, 0.2), 0 20px 30px rgba(0, 0, 0, 0.2),
+      0 30px 20px rgba(0, 0, 0, 0.2);
+    &::before {
+      width: 100%;
+      content: attr(data-title);
+      position: absolute;
+      top: -3px;
+      left: 0;
+      text-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
+      color: #00a170;
+      transition: 0.5s;
+    }
+    &::after {
+      width: 100%;
+      content: attr(data-title);
+      position: absolute;
+      top: -7px;
+      left: 0;
+      text-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
+      color: #fff;
+      transition: 0.5s;
+    }
+    &:hover::before {
+      top: -5px;
+      left: 5px;
+    }
+    &:hover::after {
+      top: -10px;
+      left: 10px;
+    }
+    &:hover {
+      text-shadow: -5px 10px 0 rgba(0, 0, 0, 1), 0 10px 40px rgba(0, 0, 0, 0.2), 0 20px 30px rgba(0, 0, 0, 0.5),
+        -10px 20px 20px rgba(0, 0, 0, 0.5);
+    }
+  }
+  .form {
+    width: 90%;
+    height: 50px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    &__row {
+      width: calc(50% - 20px);
+      height: 60%;
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      margin-right: 20px;
+      &-label {
+        color: #fff;
+      }
+      &-input {
+        height: 100%;
+        box-shadow: none;
+        font-size: 18px;
+        padding: 0 10px;
+      }
+      &-select {
+        height: 100%;
+      }
+    }
+  }
+}

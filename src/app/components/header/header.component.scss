@@ -1,0 +1,114 @@
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  padding: 20px 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  background: rgb(24, 90, 157);
+  background: linear-gradient(180deg, rgba(24, 90, 157, 1) 0%, rgba(67, 206, 162, 1) 100%);
+  &__logo {
+    position: relative;
+    font-size: 28px;
+    color: #111;
+    letter-spacing: 1px;
+    font-weight: 700;
+    opacity: 0;
+    animation: slideLeft 0.5s ease-in-out forwards;
+  }
+  &__toggle {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    background: url("../../../assets/img/menu.png");
+    background-size: 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    z-index: 10000;
+    opacity: 0;
+    animation: slideRight 0.5s ease-in-out 0.5s forwards;
+  }
+  &__toggle.active {
+    background: url("../../../assets/img/close.png");
+    background-size: 25px;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  &__navigation {
+    position: absolute;
+    display: flex;
+    right: 150px;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.5s;
+    &-link {
+      color: #111;
+      font-size: 16px;
+      margin: 0 20px;
+      font-weight: 600;
+      display: inline-block;
+      opacity: 0;
+    }
+  }
+  &__navigation.active {
+    opacity: 1;
+    visibility: visible;
+    & .header__navigation-link {
+      opacity: 1;
+      animation: slideRight 0.5s ease-in-out forwards;
+    }
+  }
+}
+
+@keyframes slideRight {
+  0% {
+    transform: translateX(150px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideLeft {
+  0% {
+    transform: translateX(-150px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 10px 20px;
+    height: 70px;
+    &__navigation {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      &-link {
+        margin: 5px 10px;
+        display: inline-block;
+        letter-spacing: 1px;
+        font-size: 20px;
+      }
+    }
+  }
+}

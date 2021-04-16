@@ -1,0 +1,56 @@
+<section class="wrapper">
+  <h3 class="title">Films info :</h3>
+  <article class="content" *ngIf="info">
+    <figure class="content__image">
+      <img
+        src="{{ info.Poster }}"
+        alt="{{ info.Title }}"
+        class="content__image-item"
+      />
+    </figure>
+    <div class="content__description">
+      <div class="description__row">
+        <h4 class="description__row-title">Title:</h4>
+        <p class="description__row-text">{{ info.Title }}</p>
+      </div>
+      <div class="description__row">
+        <h4 class="description__row-title">Released:</h4>
+        <p class="description__row-text">
+          {{ info.Released }}
+        </p>
+      </div>
+      <div class="description__row">
+        <p class="description__row-title">Genre:</p>
+        <p class="description__row-text">{{ info.Genre }}</p>
+      </div>
+      <div class="description__row">
+        <p class="description__row-title">Country</p>
+        <p class="description__row-text">{{ info.Country }}</p>
+      </div>
+      <div class="description__row">
+        <p class="description__row-title">Director:</p>
+        <p class="description__row-text">
+          {{ info.Director }}
+        </p>
+      </div>
+      <div class="description__row">
+        <p class="description__row-title">Writer:</p>
+        <p class="description__row-text">{{ info.Writer }}</p>
+      </div>
+      <div class="description__row">
+        <p class="description__row-title">Actors:</p>
+        <p class="description__row-text">{{ info.Actors }}</p>
+      </div>
+      <div class="description__row">
+        <p class="description__row-title">Awards:</p>
+        <p class="description__row-text">{{ info.Awards }}</p>
+      </div>
+      <div class="description__row">
+        <p class="description__row-title">imdbRating:</p>
+        <p class="description__row-text">
+          {{ info.imdbRating }}
+        </p>
+      </div>
+    </div>
+  </article>
+</section>

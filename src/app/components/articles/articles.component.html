@@ -1,0 +1,6 @@
+<article class="wrapper">
+  <ul class="articles" *ngIf="postData">
+    <app-article *ngFor="let post of postData" [article]="post"></app-article>
+  </ul>
+  <app-loader *ngIf="!postData"></app-loader>
+</article>

@@ -1,0 +1,123 @@
+.container {
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 175px;
+  height: 175px;
+  margin: auto;
+  display: flex;
+  flex-flow: row wrap;
+  .dot {
+    width: 35px;
+    height: 35px;
+    &:nth-child(1) {
+      background: rgb(32, 223, 214);
+      animation: load 0.35s linear -0.12s infinite alternate;
+    }
+    &:nth-child(2) {
+      background: rgb(32, 223, 220);
+      animation: load 0.35s linear -0.23s infinite alternate;
+    }
+    &:nth-child(3) {
+      background: rgb(32, 220, 223);
+      animation: load 0.35s linear -0.35s infinite alternate;
+    }
+    &:nth-child(4) {
+      background: rgb(32, 214, 223);
+      animation: load 0.35s linear -0.46s infinite alternate;
+    }
+    &:nth-child(5) {
+      background: rgb(32, 207, 223);
+      animation: load 0.35s linear -0.58s infinite alternate;
+    }
+    &:nth-child(6) {
+      background: rgb(32, 201, 223);
+      animation: load 0.35s linear -0.69s infinite alternate;
+    }
+    &:nth-child(7) {
+      background: rgb(32, 194, 223);
+      animation: load 0.35s linear -0.81s infinite alternate;
+    }
+    &:nth-child(8) {
+      background: rgb(32, 188, 223);
+      animation: load 0.35s linear -0.92s infinite alternate;
+    }
+    &:nth-child(9) {
+      background: rgb(32, 182, 223);
+      animation: load 0.35s linear -1.04s infinite alternate;
+    }
+    &:nth-child(10) {
+      background: rgb(32, 175, 223);
+      animation: load 0.35s linear -1.15s infinite alternate;
+    }
+    &:nth-child(11) {
+      background: rgb(32, 169, 223);
+      animation: load 0.35s linear -1.27s infinite alternate;
+    }
+    &:nth-child(12) {
+      background: rgb(32, 163, 223);
+      animation: load 0.35s linear -1.38s infinite alternate;
+    }
+    &:nth-child(13) {
+      background: rgb(32, 156, 223);
+      animation: load 0.35s linear -1.5s infinite alternate;
+    }
+    &:nth-child(14) {
+      background: rgb(32, 150, 223);
+      animation: load 0.35s linear -1.61s infinite alternate;
+    }
+    &:nth-child(15) {
+      background: rgb(32, 143, 223);
+      animation: load 0.35s linear -1.73s infinite alternate;
+    }
+    &:nth-child(16) {
+      background: rgb(32, 137, 223);
+      animation: load 0.35s linear -1.84s infinite alternate;
+    }
+    &:nth-child(17) {
+      background: #2083df;
+      animation: load 0.35s linear -1.96s infinite alternate;
+    }
+    &:nth-child(18) {
+      background: #207cdf;
+      animation: load 0.35s linear -2.07s infinite alternate;
+    }
+    &:nth-child(19) {
+      background: #2076df;
+      animation: load 0.35s linear -2.19s infinite alternate;
+    }
+    &:nth-child(20) {
+      background: #2070df;
+      animation: load 0.35s linear -2.3s infinite alternate;
+    }
+    &:nth-child(21) {
+      background: #2069df;
+      animation: load 0.35s linear -2.42s infinite alternate;
+    }
+    &:nth-child(22) {
+      background: #2063df;
+      animation: load 0.35s linear -2.53s infinite alternate;
+    }
+    &:nth-child(23) {
+      background: #205cdf;
+      animation: load 0.35s linear -2.65s infinite alternate;
+    }
+    &:nth-child(24) {
+      background: #2056df;
+      animation: load 0.35s linear -2.76s infinite alternate;
+    }
+    &:nth-child(25) {
+      background: #2050df;
+      animation: load 0.35s linear -2.88s infinite alternate;
+    }
+  }
+}
+
+@keyframes load {
+  100% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+}

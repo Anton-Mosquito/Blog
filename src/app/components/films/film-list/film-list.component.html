@@ -1,0 +1,25 @@
+<section class="wrapper">
+  <h3 class="title">Films :</h3>
+  <article class="content" *ngIf="items">
+    <div class="content__card" *ngFor="let item of items">
+      <figure class="content__card-poster">
+        <img
+          src="{{
+            item.Poster
+              ? item.Poster
+              : 'https://s1.reutersmedia.net/resources_v2/images/rcom-default.png?w=800'
+          }}"
+          alt="{{ item.Title }}"
+        />
+      </figure>
+      <section class="content__card-details">
+        <h4>{{ item.Title }}</h4>
+        <p class="type">{{ item.Type }}</p>
+        <p class="year">{{ item.Year }}</p>
+        <a routerLink="{{ item.imdbID }}" class="button"
+          ><span>Details</span></a
+        >
+      </section>
+    </div>
+  </article>
+</section>

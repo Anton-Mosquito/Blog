@@ -1,0 +1,36 @@
+<section class="wrapper">
+  <h2 class="title" data-title="Countries of the World">
+    Countries of the World
+  </h2>
+  <form action="" class="form">
+    <div class="form__row">
+      <label for="sort" class="form__row-label">Filter by name</label>
+      <input
+        type="text"
+        name="search"
+        id="sort"
+        class="form__row-input"
+        [(ngModel)]="searchCountry"
+      />
+    </div>
+    <div class="form__row">
+      <label for="sort" class="form__row-label">Sort by Regional Block</label>
+      <select name="" id="sort" class="form__row-select" #select>
+        <option
+          *ngFor="let option of options"
+          [ngValue]="option.value"
+          [value]="option.value"
+        >
+          {{ option.name }}
+        </option>
+      </select>
+    </div>
+  </form>
+  <app-country-block
+    *ngIf="countries"
+    [data]="countries"
+    [searchItem]="searchCountry"
+    [changing]="userUpdatedEvent"
+  ></app-country-block>
+  <app-loader *ngIf="!countries"></app-loader>
+</section>

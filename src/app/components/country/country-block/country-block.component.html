@@ -1,0 +1,64 @@
+<article class="container" *ngIf="loaded">
+  <div
+    class="card"
+    *ngFor="let item of notes | countryFilter: searchItem:'name'"
+  >
+    <div class="front active">
+      <div class="divider">
+        <div class="location">{{ item.name }}</div>
+        <button href="" class="wave-btn" type="button" #more>
+          <span class="wave-btn__text">More</span>
+          <span class="wave-btn__waves"></span>
+        </button>
+      </div>
+      <div class="weather">
+        <img src="{{ item.flag }}" alt="" />
+      </div>
+      <ul class="forecast">
+        <li>
+          <div class="day">Capital</div>
+          <div class="temperature">{{ item.capital }}</div>
+        </li>
+        <li>
+          <div class="day">Country code</div>
+          <div class="temperature">{{ item.alpha3Code }}</div>
+        </li>
+        <li>
+          <div class="day">Region</div>
+          <div class="temperature">{{ item.region }}</div>
+        </li>
+        <li>
+          <div class="day">Population</div>
+          <div class="temperature">{{ item.population }}</div>
+        </li>
+      </ul>
+    </div>
+    <div class="back">
+      <button href="" class="wave-btn" type="button" #goBack>
+        <span class="wave-btn__text">Back</span>
+        <span class="wave-btn__waves"></span>
+      </button>
+      <ul class="forecast">
+        <li>
+          <div class="day">Area</div>
+          <div class="temperature">{{ item.area }} km<sup>2</sup></div>
+        </li>
+        <li>
+          <div class="day">Lat/Lng</div>
+          <div class="temperature">
+            {{ item.latlng | slice: 0:1 }} / {{ item.latlng | slice: 1 }}
+          </div>
+        </li>
+        <li>
+          <div class="day">Demonym</div>
+          <div class="temperature">{{ item.demonym }}</div>
+        </li>
+        <li>
+          <div class="day">Subregion</div>
+          <div class="temperature">{{ item.subregion }}</div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</article>
+<app-loader *ngIf="!loaded"></app-loader>

@@ -1,0 +1,51 @@
+<section class="wrapper">
+  <div class="content">
+    <div class="form-box">
+      <h2 class="form-box__header">Registration</h2>
+      <form action="" method="post" #form>
+        <app-text
+          [formControl]="nameControl"
+          [objectForControlsText]="nameControl"
+          [placeHolder]="'Name'"
+        ></app-text>
+        <app-text
+          [formControl]="surnameControl"
+          [objectForControlsText]="surnameControl"
+          [placeHolder]="'Surname'"
+        ></app-text>
+        <app-email
+          [formControl]="emailControl"
+          [objectForControlsEmail]="emailControl"
+        ></app-email>
+        <app-password
+          [formControl]="passwordControl"
+          [objectForControlsPassword]="passwordControl"
+          [placeHolder]="'Password'"
+        ></app-password>
+        <app-password
+          [formControl]="confirmPasswordControl"
+          [objectForControlsPassword]="confirmPasswordControl"
+          [mainFieldPassword]="passwordControl.value"
+          [placeHolder]="'Confirm password'"
+        ></app-password>
+        <app-phone
+          [formControl]="phoneControl"
+          [objectForControlsPhone]="phoneControl"
+        ></app-phone>
+        <div class="form-box__field">
+          <button type="submit" class="button">
+            <span>Register</span>
+          </button>
+        </div>
+        <div class="form-box__field">
+          <p>
+            If you already have an account, you can
+            <a routerLink="/login">Sign in</a>
+            here
+          </p>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="image-box"></div>
+</section>
